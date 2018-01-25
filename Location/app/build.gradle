@@ -40,7 +40,5 @@ dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:25.3.1'
-    compile files('libs/BaiduLBS_Android.jar')
-    compile files('libs/Amap_2DMap_V5.2.0_20170627.jar')
     compile project(':location_lbs')
 }
