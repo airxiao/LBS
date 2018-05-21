@@ -135,6 +135,32 @@ public class LocationInfo {
      */
     private String address;
 
+    /**
+     *提供者
+     */
+    private String provider;
+
+    /**
+     * 速度(米/秒)
+     */
+    private float speed;
+
+    /**
+     * 角度
+     */
+    private float bearing;
+
+    /**
+     * 兴趣点
+     */
+    private String poiName;
+
+    /**
+     * 定位时间
+     * (in milliseconds since January 1, 1970)
+     */
+    private long time;
+
     /******************************************* GPS状态码 *******************************************************/
     /**
      * GPS定位状态--正常
@@ -193,6 +219,11 @@ public class LocationInfo {
         isWifiAble = location.getLocationQualityReport().isWifiAble();
         gpsStatus = location.getLocationQualityReport().getGPSStatus();
         gpsSatellites = location.getLocationQualityReport().getGPSSatellites();
+        provider = location.getProvider();
+        speed = location.getSpeed();
+        bearing = location.getBearing();
+        poiName = location.getPoiName();
+        time = location.getTime();
     }
 
     public double getLongitude() {
@@ -321,5 +352,45 @@ public class LocationInfo {
 
     public void setGpsSatellites(int gpsSatellites) {
         this.gpsSatellites = gpsSatellites;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public void setProvider(String provider) {
+        this.provider = provider;
+    }
+
+    public float getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(float speed) {
+        this.speed = speed;
+    }
+
+    public float getBearing() {
+        return bearing;
+    }
+
+    public void setBearing(float bearing) {
+        this.bearing = bearing;
+    }
+
+    public String getPoiName() {
+        return poiName;
+    }
+
+    public void setPoiName(String poiName) {
+        this.poiName = poiName;
+    }
+
+    public long getTime() {
+        return time;
+    }
+
+    public void setTime(long time) {
+        this.time = time;
     }
 }
